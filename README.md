@@ -193,7 +193,7 @@ Fix the reed switch to the handle.
 
 Finally fix the other blade to the other handle and fix both handles together, upload the firmware when you are sure everything works and you're good to go!
 
-#Special Thanks !
+# Special Thanks !
 
 Thanks to my boy Carabouille for participating with me and qualify before me (bravo!)
 
