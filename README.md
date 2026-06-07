@@ -1,9 +1,17 @@
 # Pylou-s-Karambit
+![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_nRF52840-green)
+
+![Firmware](https://img.shields.io/badge/Firmware-C%2B%2B%20%2F%20Arduino-blue)
+
+![Machine Learning](https://img.shields.io/badge/AI-Edge_Impulse-orange)
+
+![CAD](https://img.shields.io/badge/CAD-Blender%20%2F%20SolidWorks-red)
+
 Hey there ! This is the GitHub Repo where I'll show my creation based of the Reaver Karambit from Valorant that I wanted to bring to life!
 
 I tried to make it as realistic as possible with LEDs A smoke generator and even movement and voice recognition!  You should see everything here that will make you able to recreate my work, GL :)
 # Why ?
-Well, you should first know that my work is completly useless and is purely esthetical. It'll be able to cut butter at his peak or maybe set my house in fire if I did my job wrong ;-;
+Well, you should first know that my work is completly useless and is purely aesthetic. It'll be able to cut butter at his peak or maybe set my house in fire if I did my job wrong ;-;
 
 I wanted to make it as a fan of the game Valorant. A lot of recreation has been made because it is a very popular weapon skin in the game, but none tried to push the reality to the maximum, thats why I'm here !
 
@@ -13,12 +21,14 @@ Here's an exhaustive list of the functionnalities I implemented into my Karambit
 - A rechargeable Smoke generator based on a E-cig
 - RGB Show! With the help of an SK6812MINI and an acrylic tube to make special effects!
 - Movement detection : A list of pre-trained movement to make different effects base on which movement you execute! 
-- Speech recogntion : A list of pre-trained word-orders to activate/desactivate certain functionalities
+- Edge AI Speech recogntion : A list of pre-trained word-orders to activate/desactivate certain functionalities using a custom-trained TinyML model via the PDM microphone
 - Magnetic sensor : to detect if it is on his stand (more and that down below)
-- Low comsumption : Deep Sleep implemetation in the firmware to make the battery last forever since there's no on/off button, You just take it and it wakes up!
+- Ultra-Low Power Management : Hardware-level Deep Sleep (SYSTEM OFF) implementation with QSPI flash memory shutdown and Wake-on-Motion via I2C intterupts, to save battery life.
+- Hardware Fail-Safe: Native Watchdog Timer (WDT) implementation directly addressing the ARM Cortex-M4 to prevent software failure / thermal runaway
+
 I really wanted to make this as complete as possible while keeping it the size of a real karambit that can fit in you hands, it was quite a challenge.
 # Zine page
-But an image is worth thousands of words! I made the CAO of my model in blender because the karambit is a really complex shape and I'm a lot more comfortable with blender even thought it's not really made for this job and I had to deal with some issues due to blender. 
+But an image is worth thousands of words! I made the CAD of my model in blender because the karambit is a really complex shape and I'm a lot more comfortable with blender even thought it's not really made for this job and I had to deal with some issues due to blender. 
 
 But I made a little render with an exploded view effect and I think it turned out well:
 <image src=>
@@ -30,20 +40,20 @@ If you want, In the CAD folder you can find the "render.blend" file where I work
 # CAD
 ### the Karambit
 Talking about CAD, as I said I did almost everything in Blender to work around the complex shape that the karambit is.  
-But I did use SOLIDWORKS when I add to model i couldn't find on the internet or to make a special adapter and then imported it in Blender.   
-I think it is really more easy to work with it for placing componenets the way you want, and since I add so little space to work with it was perfect for me.  
-I add to think about a way to:
+But I did use SOLIDWORKS when I had to model i couldn't find on the internet or to make a special adapter and then imported it in Blender.   
+I think it is really more easy to work with it for placing components the way you want, and since I had so little space to work with it was perfect for me.  
+I had to think about a way to:
 - insert the pcb inside the handle
 - fit the resistor inside the handle close the blade side and a good way to fix it
 - make each part (2 handle part, 2 blade side) fit together with screw for a strong grip since you have to spin the karambit
 - make a way to conduct light to the blade with no LEDs inside of it because the pcb couldn't go into the blade
-- place usb-c port, reed sensor and cork hole for the tank in a way that is comfortable and make sense with the way it is olded in the stand
+- place usb-c port, reed sensor and cork hole for the tank in a way that is comfortable and make sense with the way it is held in the stand
 Everything have his place and it's really not made randomely, I, in fact, made the pcb in the same time as the CAD files to rearange everything as I wanted to for optimal placement
 ### Stand
 In the first place I wanted only to build the Karambit, but when I worked on the firmware, I realised that the board I selected didn't have a way to wake up itself throught the IMU.  
 That's why I wanted a backup option for the wakeup system and I thought about a magnetic option with a stand. The idea is that when the karambit detects a magnet placed in the stand, It goes to sleep to save the battery, and when take it off it wakes up with special effects!
 
-I wanted a dark ans stilisyed way to show off the reaver karambit. With a bit of research I found this picture reference of the reaver woods from the game wayfinder that i didnt't even know existed:
+I wanted a dark ans stylized way to show off the reaver karambit. With a bit of research I found this picture reference of the reaver woods from the game wayfinder that i didnt't even know existed:
 <image src=>
 I thought it completly matched the theme and made a model based on this reference image. It holds the knife with different branches and goes around like a protection.
 I made it really big and I will have to print it in 5 different parts and glue it together, I really hope it will be strong enough to hold everything, but it should do the job.
@@ -92,7 +102,8 @@ Then there is a python script to record directly from the xiao nrf52 microphone!
 Then modify in the script the name of your folder you want to get the dataset in, and the name of the first order you are recording. Record you first word press "r" and repeat. The more you do the better, I'll say minimum of 100 of them. Then press "q" to quit and save every file. 
 
 Now you just have to follow this [tutorial](https://wiki.seeedstudio.com/XIAO-BLE-PDM-EI/) with you own dataset. Here's the parameters that I personnaly used and that is working great for me: <image src=>
-Don't forget to change in the Firmware code the import of the library to your own !
+Don't forget to change in the Firmware code the import of the library to your own !  
+⚠️ I recommend you record you files after build (see below) to have more realistic conditions
 ### Movement Recognition
 Haven't done that yet since i'm waiting to build it to record the different movement I want the microcontroller to recognize
 ## How does it work ?
@@ -103,7 +114,7 @@ There is a couple of files that is in the firmware folder, and I tried to commen
 Most of these folders are the firmware divided in multiples part to test every functionality of the firmware separetely:
 - Testing the Deep Sleep mode and the different way to wake it up (IMU or reed sensor)
 - Testing the Voice recognition model and the different way to use it (Continuous or no)
-- Testing the watchdog (natively implemented inside the nrf52 chip from norton, this was a bit complicated to make it work) to prevent any errors crashing with the voice AI model
+- Testing the watchdog (natively implemented inside the nrf52 chip from Nordic Semiconductor, this was a bit complicated to make it work) to prevent any errors crashing with the voice AI model
 - Battery reading test
 - IMU testing
 These scripts could help you when building the Karambit to check every components and maybe find what isn't working (if it's not working) especially with voice and movement recognition and maybe calibrate the battery reading, Deep Sleep and watchdog should work perfectly.
@@ -130,13 +141,14 @@ Here's the BOM (you can also find it in CSV and xlsx format in the files):
 | Seeed Studio Xiao nRF52840 Sense | 64 Mhz processor, IMU and microphone integrated | 1 | 18.19 | 18.19 | 18.19 | [Link](https://fr.aliexpress.com/item/1005006988944671.html) |  |
 | BT 2.0 male cable | to cleanly connect the battery to the pcb | 1 | 3.59 | 1.945 | 1.945 | [Link](https://fr.aliexpress.com/item/1005009623841974.html) |  |
 | SK6812MINI LED | 35 35 ARGB Led  | 1 | 10.89 | 0.1089 | 0.1089 | [Link](https://fr.aliexpress.com/item/1005004931260882.html) | You should modify the pcb and take SK6812MINI-E (the E is important) It's a lot more easier to solder, I already have those so i will use them (in pain) |
-| GS Air Eleaf Clearomizer | 2.5 ml tank / 1,5 ohm resistance (included) | 1 | 7.5 | 7.5 | 7.5 | [Link](https://www.oliquide.com/Clearomiseurs-Eleaf-Eleaf-GS-Air.) |  |
-| Transistor IRLZ44N | 47A max, Vgs=2V, to control both fan and heart resistance | 2 | 2.06 | 0.206 | 0.412 | [Link](https://fr.aliexpress.com/item/1005009876208141.html) | Should be overkill, I took them coz I already had them |
+| GS Air Eleaf Clearomizer | 2.5 ml tank / 1,5 ohm coil (included) | 1 | 7.5 | 7.5 | 7.5 | [Link](https://www.oliquide.com/Clearomiseurs-Eleaf-Eleaf-GS-Air.) |  |
+| Transistor IRLZ44N | 47A max, Vgs=2V, to control both fan and heat coil | 2 | 2.06 | 0.206 | 0.412 | [Link](https://fr.aliexpress.com/item/1005009876208141.html) | Should be overkill, I took them coz I already had them |
 | 6mm diameter PVC Tube | 6mm exterior diameter 4mm interior diameter, to conduct the smoke to the blade | 1 | 2.09 | 2.09 | 2.09 | [Link](https://fr.aliexpress.com/item/1005006173546510.html) |  |
 | M2 Screws | Screws different lengths kit | 1 | 5.09 | 5.09 | 5.09 | [Link](https://fr.aliexpress.com/item/1005007278965396.html) | Might have to cut them, make sure to put a bolt before to not break the thread |
 | Magnet | 8mm diameter | 1 | 3.59 | 0.07 | 0.07 | [Link](https://fr.aliexpress.com/item/1005011969218794.html) |  |
+| Anti-slip pads | for the stand | 7 | 1.8 | 0.018 | 0.12 | [Link](https://fr.aliexpress.com/item/1005008980666002.html) |  |
 | 200/1K Ω resistors | for transistor signal and pull-down | 2 each |  |  |  | Take any kit of resistors on Aliexpress it'll be useful in the future |  |
-| Hyper CF PLA Filament | For printing the handles, blades, stand and adaptaters | 1 | 34.99 | 34.99 | 34.99 | [Link](https://store.creality.com/fr/products/hyper-pla-cf-carbone-fibre-1-75mm-filament-dimpression-3d-1kg) | It's just what I will be using coz i have it in stock, but anything can do the job ABS will be better for heat resistance |
+| Hyper CF PLA Filament | For printing the handles, blades, stand and adaptaters | 1 | 34.99 | 34.99 | 34.99 | [Link](https://store.creality.com/fr/products/hyper-pla-cf-carbone-fibre-1-75mm-filament-dimpression-3d-1kg) | It's just what I will be using coz i have it in stock, but anything can do the job ABS will be better for heat coil |
 | Fake Leather | Auto-adhesive layer | 1 | 4.99 | 4.99 | 4.99 | [Link](https://fr.aliexpress.com/item/1005008381916334.html) |  |
 | Mettalic Paint | Shiny paint weeee | 1 | 5 | 5 | 5 | Bought from local store |  |
 | Red Metallic Paint | Shiny paint weeee | 1 | 5 | 5 | 5 | Bought from local store |  |
@@ -146,9 +158,61 @@ Here's the BOM (you can also find it in CSV and xlsx format in the files):
 | Total Buying Price (Because you'll buying multiples at once) |  | 150.45€ | 177$  |  |  |  |  |
 
 
-#Build time !
-blabla
+# Build time !
+It's now time to make the Karambit! If you're confused any time, be free to check the blender file to understand where everything is placed! Everything is named and (more or less) organized, I hope you'll understand everything :)
 
+### **Step 1:** Printing
+
+First print everything from the STLs folder with your filament, it should be around 800g gram worth of filament, (I hope for you that everything fits in your printer, for reference mine is an ender 3 V3 KE).  
+
+⚠️ Be careful when printing the stand, you will have to stop the print at a certain height to insert the magnet inside the branches and then resume print.
+Then glue everything together for the stand, sand it and paint it if you think that is necessary. I recommend you to do it at least for the Karambit parts to make it cleaner!
+Don't forget to place the anti-slip pads below the stand for a stable structure!
+Place the fake leather into both handles, mines auto-adhesive if you take the one linked in the BOM
+
+### **Step 2** soldering:
+
+Beforehand be careful with the reed sensor, you will have to cut a platic part from it : <image src=> without that it won't fit  
+Solder the xiao nrf52840 (dont forget connection for the battery), 200/1k ohms resistor, both mosfets, battery cable, fan, Schottky diode, SK6812MINI Led and Reed switch (let enough cable to play with) into the PCB and test everything with the different scripts in the Firmware folder.  
+
+With a soldering Iron place the differents inserts in there places.  
+
+Drill a 6mm hole into the Resistor's tank (check alignement with the hole made in the blade) and glue the tube to the tank with a waterproof glue like epoxy <image src=>
+Solder + and - 18awg or less cable to the resistor as it shows on this image(then solder it to the PCB with enough length to play with):  <image src=>
+
+### Step 3: assembling:
+Fix the battery below the PCB with the adpater and screws/bolt.  
+Fix the PCB into the handle with the scews.  
+Fix the Resistor with the adapter printed and screws. 
+
+Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor.
+Fix the first blade to the handle.
+
+Cut and insert the acrylic tube into the handle and place it above the LED, if it doesn't transmit light good enough, try sanding the sides of the acrylic tube.  
+Fix the reed switch to the handle.
+
+Finally fix the other blade to the other handle and fix both handles together, upload the firmware when you are sure everything works and you're good to go!
+
+#Special Thanks !
+
+Thanks to my boy Carabouille for participating with me and qualify before me (bravo!)
+
+Thanks to the Hack Club community for this incredible opurtinty that represent fallout!
+
+Thanks to the UwU GanG to exist and be the best RL team imaginable :).
+
+Thanks to Seeed Studio for the xiao boards (cyu in Shenzhen, plzzzzzz make more exemples code on your board ty)
+
+Thanks to Emmanuel Macron for giving me so much money in scolarship, the goat
+
+
+See you in Shenzhen ;).
+
+
+
+
+
+\- Pylou
 
 
 
