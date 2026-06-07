@@ -144,6 +144,8 @@ Here's the BOM (you can also find it in CSV and xlsx format in the files):
 | Shipping Price |  | ~10-15€ |  |  |  |  |  |
 | Total Price |  | 109.55€ | 128.88$ |  |  |  |  |
 | Total Buying Price (Because you'll buying multiples at once) |  | 150.45€ | 177$  |  |  |  |  |
+
+
 #Build time !
 blabla
 
