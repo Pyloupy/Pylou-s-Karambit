@@ -7,7 +7,9 @@
 
 ![CAD](https://img.shields.io/badge/CAD-Blender%20%2F%20SolidWorks-red)
 
-Hey there ! This is the GitHub Repo where I'll show my creation based of the Reaver Karambit from Valorant that I wanted to bring to life!
+Hey there ! This is the GitHub Repo where I'll show my creation based of the Reaver Karambit from Valorant (cf photo down below) that I wanted to bring to life!
+
+<img src=./Pictures/ReaverKarambit.jpg width=300>
 
 I tried to make it as realistic as possible with LEDs A smoke generator and even movement and voice recognition!  You should see everything here that will make you able to recreate my work, GL :)
 # Why ?
@@ -15,7 +17,11 @@ Well, you should first know that my work is completly useless and is purely aest
 
 I wanted to make it as a fan of the game Valorant. A lot of recreation has been made because it is a very popular weapon skin in the game, but none tried to push the reality to the maximum, thats why I'm here !
 
-At first, I created a prototype with not a lot of brain work behind it and it didnt work at all and I didn't even know why, so I gave up. My friends made a little fun of me and that's why when I hear of the Fallout project I decided to take my revenge and make a clean work that will work! That's enough story telling, let's get in the details !
+At first, I created a prototype with not a lot of brain work behind it and it didnt work at all (as you can see in the photo) and I didn't even know why, so I gave up.
+
+<img src=./Pictures/Prototype.jpg wdith=300>
+
+My friends made a little fun of me and that's why when I hear of the Fallout project I decided to take my revenge and make a clean work that will work! That's enough story telling, let's get in the details !
 # Functionalities
 Here's an exhaustive list of the functionnalities I implemented into my Karambit that maybe I'll extend later when completing the build!
 - A rechargeable Smoke generator based on a E-cig
@@ -31,15 +37,21 @@ I really wanted to make this as complete as possible while keeping it the size o
 But an image is worth thousands of words! I made the CAD of my model in blender because the karambit is a really complex shape and I'm a lot more comfortable with blender even thought it's not really made for this job and I had to deal with some issues due to blender. 
 
 But I made a little render with an exploded view effect and I think it turned out well:
-<image src=>
+
+<img src=./Pictures/ZinePage.png wdith=800>
 
 The design is around the exploded view where you can see every components linked to the explanation of his role. I think it's a cool way to show off everything you have to fit in this tiny space to make it work!
 For the text name, I tried to make an effect with the smoke comming out of the resistor, although I think the idea is great, I'm not completly happy with the effect it gives. But overall I'm happy with my zine page!  
 If you want, In the CAD folder you can find the "render.blend" file where I worked on the exploded view if you want to play with it :)
-<image src=>
+
+<img src=./Pictures/Render.png width=300>
+
 # CAD
 ### the Karambit
-Talking about CAD, as I said I did almost everything in Blender to work around the complex shape that the karambit is.  
+Talking about CAD, as I said I did almost everything in Blender to work around the complex shape that the karambit is:
+
+<img src=./Pictures/CADBlender.png width=600>
+
 But I did use SOLIDWORKS when I had to model i couldn't find on the internet or to make a special adapter and then imported it in Blender.   
 I think it is really more easy to work with it for placing components the way you want, and since I had so little space to work with it was perfect for me.  
 I had to think about a way to:
@@ -53,11 +65,15 @@ Everything have his place and it's really not made randomely, I, in fact, made t
 In the first place I wanted only to build the Karambit, but when I worked on the firmware, I realised that the board I selected didn't have a way to wake up itself throught the IMU.  
 That's why I wanted a backup option for the wakeup system and I thought about a magnetic option with a stand. The idea is that when the karambit detects a magnet placed in the stand, It goes to sleep to save the battery, and when take it off it wakes up with special effects!
 
-I wanted a dark ans stylized way to show off the reaver karambit. With a bit of research I found this picture reference of the reaver woods from the game wayfinder that i didnt't even know existed:
-<image src=>
+I wanted a dark and stylized way to show off the reaver karambit. With a bit of research I found this picture reference of the reaver woods from the game wayfinder that i didnt't even know existed:
+
+<image src=./Pictures/ReaverWood.png width=400>
+  
 I thought it completly matched the theme and made a model based on this reference image. It holds the knife with different branches and goes around like a protection.
+
+<image src=./Picutres/Stand.png width=400>
+  
 I made it really big and I will have to print it in 5 different parts and glue it together, I really hope it will be strong enough to hold everything, but it should do the job.
-<image src=>
 ### Adapters 
 
 I also made some adapter in SOLIDWORKS to:
@@ -72,7 +88,9 @@ Now for the PCB part! I did everything in Kicad which is a free software you can
 ### Schematic
 Overall, the schematic and electrical design is not really complicated as it consist only of the xiao nrf52840, pins for the battery, pins for the resistor, pins for the fan, 2 IRLZ44N mosfets and a couples of resistors and diode for protection.  
 Here's the schematic:
-<image src=>
+
+<image src=./Pictures/Schematics.png width=400>
+  
 As you can see the mosfets control both the fan and resistor as the current could kill the microcontroller if connected directly to it.  
 There are 10k pull-down resistors linked to the mosfets to prevent any unwanted turn on when the board is in deep sleep. The schottky 1N5819 diode is connected to the fan to prevent any back current that could fry the xiao board.
 
@@ -81,6 +99,9 @@ That is pretty much it, as I said nothing really complicated for the schematic, 
 Since the xiao boards include the charging system, IMU and microphone on itself, it really made the job easier.  
 But the pcb itself is a bit small and in a strange shape since it had to fit in the curved form karambit.  
 I think I couldn't really more include more components with the way I shaped the pcb, with the large trace I had to place for the current to flow easily into the heat resistor.
+Here's how it looks:
+
+<img src=./Pictures/PCB.png width=400>
 
 I also added holes to scew the pcb to the handle of the karambit, and I used the mosfets holes to fix the battery beneath the pcb.  
 The SK6812MINI LEDs is place as far away as I could to place it near the blade of the karambit, that is why the pcb has this strange L shape.  
@@ -173,21 +194,25 @@ Place the fake leather into both handles, mines auto-adhesive if you take the on
 
 ### **Step 2** soldering:
 
-Beforehand be careful with the reed sensor, you will have to cut a platic part from it : <image src=> without that it won't fit  
+Beforehand be careful with the reed sensor, you will have to cut a platic part from it : 
+<img src=./Pictures/reed.jpg width=400>
+without that it won't fit  
 Solder the xiao nrf52840 (dont forget connection for the battery), 200/1k ohms resistor, both mosfets, battery cable, fan, Schottky diode, SK6812MINI Led and Reed switch (let enough cable to play with) into the PCB and test everything with the different scripts in the Firmware folder.  
 
 With a soldering Iron place the differents inserts in there places.  
 
-Drill a 6mm hole into the Resistor's tank (check alignement with the hole made in the blade) and glue the tube to the tank with a waterproof glue like epoxy <image src=>
-Solder + and - 18awg or less cable to the resistor as it shows on this image(then solder it to the PCB with enough length to play with):  <image src=>
+Drill a 6mm hole into the Resistor's tank (check alignement with the hole made in the blade) and glue the tube to the tank with a waterproof glue like epoxy (will add a picture on that when i'll do it)
+Solder + and - 18awg or less cable to the resistor as it shows on this image(then solder it to the PCB with enough length to play with):  (will add a picture on that when i'll do it)
 
 ### Step 3: assembling:
 Fix the battery below the PCB with the adpater and screws/bolt.  
 Fix the PCB into the handle with the scews.  
 Fix the Resistor with the adapter printed and screws. 
 
-Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor. <image src=>
-Then block the left side of the base to force the airflow to go throught the coil : <image src=>
+Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor. 
+<img src=./Pictures/removejoint.jpg width=400>
+Then block the left side of the base to force the airflow to go throught the coil : 
+<img src=./Pictures/airflow.png width=400>
 Fix the first blade to the handle.
 
 Cut and insert the acrylic tube into the handle and place it above the LED, if it doesn't transmit light good enough, try sanding the sides of the acrylic tube.  
@@ -206,7 +231,8 @@ Thanks to the UwU GanG to exist and be the best RL team imaginable :).
 Thanks to Seeed Studio for the xiao boards (cyu in Shenzhen, plzzzzzz make more exemples code on your board ty)
 
 Thanks to Emmanuel Macron for giving me so much money in scolarship, the goat
-
+<br/>
+<br/>
 
 See you in Shenzhen ;).
 
