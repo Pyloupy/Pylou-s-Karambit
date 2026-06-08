@@ -117,6 +117,7 @@ Most of these folders are the firmware divided in multiples part to test every f
 - Testing the watchdog (natively implemented inside the nrf52 chip from Nordic Semiconductor, this was a bit complicated to make it work) to prevent any errors crashing with the voice AI model
 - Battery reading test
 - IMU testing
+- Fan/Led/mosfets testing
 These scripts could help you when building the Karambit to check every components and maybe find what isn't working (if it's not working) especially with voice and movement recognition and maybe calibrate the battery reading, Deep Sleep and watchdog should work perfectly.
 
 Have fun creating new effects/movement/orders to you karambit to make it personal!
@@ -185,7 +186,8 @@ Fix the battery below the PCB with the adpater and screws/bolt.
 Fix the PCB into the handle with the scews.  
 Fix the Resistor with the adapter printed and screws. 
 
-Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor.
+Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor. <image src=>
+Then block the left side of the base to force the airflow to go throught the coil : <image src=>
 Fix the first blade to the handle.
 
 Cut and insert the acrylic tube into the handle and place it above the LED, if it doesn't transmit light good enough, try sanding the sides of the acrylic tube.  
