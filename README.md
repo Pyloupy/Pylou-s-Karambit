@@ -114,7 +114,7 @@ I think there is some details I could improve on the pcb but I didn't want to ma
 ## Installation
 ### Arduino
 You will have to get the [Arduino IDE](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) to flash the xiao board. Then you will have to install the Seeed Xiao board inside the Arduino IDE (tutorial [here](https://wiki.seeedstudio.com/XIAO_BLE/#getting-started)) and make sure you select the mbed boards and not the classic one!  
-After that you will have to install a couples of arduino libraries that I worked with, I made a folder called "Librairies" that you can copy-paste into your local Arduino folder in what I believe is ```/username/Documents/Arduino/librairies``` or simply get your own with the library manager inside arduino. There is a txt file with links to all of them.
+After that you will have to install a couples of arduino libraries that I worked with, I made a folder called "Librairies" that you can copy-paste into your local Arduino folder in what I believe is ```/username/Documents/Arduino/librairies``` / install zip libraries or simply get your own with the library manager inside arduino. There is a txt file with links to all of them.
 
 Then you'll just have to open the ReaverFirmware.ino file select the xiao nrf52840 board (mbed version) and flash the firmware, this can take a while with the speech recognition compilation.
 ### Custom Speech Recognition
