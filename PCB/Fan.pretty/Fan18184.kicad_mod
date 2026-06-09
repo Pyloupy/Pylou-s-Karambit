@@ -1,0 +1,140 @@
+(footprint "Fan18184"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0.1 10.7 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "23c0065c-e6df-42f5-a787-47b56ed61d1f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Fan18184"
+		(at 0.1 12.2 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "585f536c-e68d-4322-88f4-6ba7fbe18d2f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a9491950-9333-46c1-94a5-4a3fa6b4d2ac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6945c75c-fbdc-4814-ab26-0fef8cd69a98")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -1 -10)
+		(end 20.8 9.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "37203b77-6f59-4b39-afde-9140799db3f0")
+	)
+	(fp_rect
+		(start 2 -9)
+		(end 20 9)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "66e0cbad-7185-409b-ae02-45f7eb9a91c5")
+	)
+	(fp_text user "Fan18184"
+		(at 0.1 13.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "fb9277f7-f5f4-4a64-b8dd-716946e855cb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 3.5 -7.5)
+		(size 2 2)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "b3b5f6b8-a7e4-46fb-b3b2-977fd2bb88cb")
+	)
+	(pad "" np_thru_hole circle
+		(at 18.5 -7.5)
+		(size 2 2)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "e48678c0-da22-4ebd-a72f-8166d01c3325")
+	)
+	(pad "" np_thru_hole circle
+		(at 18.5 7.5)
+		(size 2 2)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "a027fc9b-0eb7-484d-bd70-1c1cccf9add0")
+	)
+	(pad "1" thru_hole circle
+		(at 0.1 -1.17)
+		(size 1.905 1.905)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "de9f4fdb-f8e6-49c5-84a6-8616d8a7503e")
+	)
+	(pad "2" thru_hole rect
+		(at 0.1 1.37)
+		(size 1.905 1.905)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7d59bf0e-6806-4d41-9406-52084b97c17c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/fan.step"
+		(offset
+			(xyz 12.5 1.75 2)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -180 -180 -90)
+		)
+	)
+)
