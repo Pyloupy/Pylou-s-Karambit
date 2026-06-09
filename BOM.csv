@@ -1,0 +1,34 @@
+Item;Specs;Quantity;Buying Price (�);Unit Price (�);Total Price (�);Link;Tips
+18x14mm fan;0.2 cfm, blow the smoke as it is in a closed case;1;4,29;4,29;4,29;https://fr.aliexpress.com/item/1005010476941631.html;
+1N5819 Diode;Reverse polmarity protection for the fan;1;1,33;0,0248;0,0248;https://fr.aliexpress.com/item/1005001552094086.html;Others diodes will work, check the specs and measurement
+100x2mm acrylic tube;Conduct the light into the blade;1;1,8;0,171;0,171;https://fr.aliexpress.com/item/1005005536829247.html;It'll be cheaper to just buy a kit of different type of inserts
+M2xL2xOD3,2 insert;to fix the blade the the handle;5;1,9;0,019;0,095;https://fr.aliexpress.com/item/1005006472702418.html;
+M2xL4xOD3,2 insert;to fix the 2 parts of the knife together;6;2,25;0,0225;0,135;https://fr.aliexpress.com/item/1005006472702418.html;
+M3xL5xOD4,2 insert;to fix the pcb via the transistors holes;3;1,82;0,0364;0,1092;https://fr.aliexpress.com/item/1005006472702418.html;
+Battery BETAFPV LAVA II 1S 480mah;LiHv with 95C rating to ensure enough current;1;15,29;3,5475;3,5475;https://fr.aliexpress.com/item/1005010775720329.html;Others battery could work just be sure the C rating is higgh enough (hard to chekc on most Aliexpress battery where only fpv drones C rating are precised)
+Reed switch NC ;Low voltage GPS-23 (act as a sensor to detect if it's in the stand);1;5,79;5,79;5,79;https://fr.aliexpress.com/item/1005006926125113.html;
+Seeed Studio Xiao nRF52840 Sense;64 Mhz processor, IMU and microphone integrated;1;18,19;18,19;18,19;https://fr.aliexpress.com/item/1005006988944671.html;
+BT 2.0 male cable;to cleanly connect the battery to the pcb;1;3,59;1,945;1,945;https://fr.aliexpress.com/item/1005009623841974.html;
+SK6812MINI LED;35 35 ARGB Led ;1;10,89;0,1089;0,1089;https://fr.aliexpress.com/item/1005004931260882.html;You should modify the pcb and take SK6812MINI-E (the E is important) It's a lot more easier to solder, I already have those so i will use them (in pain)
+GS Air Eleaf Clearomizer;2.5 ml tank / 1,5 ohm resistance (included);1;7,5;7,5;7,5;https://www.oliquide.com/Clearomiseurs-Eleaf-Eleaf-GS-Air.;
+Transistor IRLZ44N;47A max, Vgs=2V, to control both fan and heart resistance;2;2,06;0,206;0,412;https://fr.aliexpress.com/item/1005009876208141.html;Could be overkill I took them coz I already had them
+6mm diameter PVC Tube;6mm exterior diameter 4mm interior diameter, to conduct the smoke to the blade;1;2,09;2,09;2,09;https://fr.aliexpress.com/item/1005006173546510.html;
+M2 Screws;Screws different lengths kit;1;5,09;5,09;5,09;https://fr.aliexpress.com/item/1005007278965396.html;Might have to cut them, make sure to put a bolt before to not break the filtrage
+Magnet;;1;3,59;0,0718;0,0718;https://fr.aliexpress.com/item/1005011969218794.html;
+200/1K ? resistors;for transistor signal and pull-down;2 each;;;;Take any kit of resistors on Aliexpress it'll be useful in the future;
+;;;;;;;
+;;;;;;;
+Hyper CF PLA Filament;For printing the handles, blades, stand and adaptaters;1;34,99;34,99;34,99;https://store.creality.com/fr/products/hyper-pla-cf-carbone-fibre-1-75mm-filament-dimpression-3d-1kg;It's just what I will be using coz i have it in stock, but anything can do the job ABS will be better for heat resistance
+Fake Leather;Auto-adhesive layer;1;4,99;4,99;4,99;https://fr.aliexpress.com/item/1005008381916334.html;
+Mettalic Paint;Shiny paint weeee;1;5;5;5;Bought from local store;
+Red Metallic Paint;Shiny paint weeee;1;5;5;5;Bought from local store;
+;;;;;;;
+;;;;;;;
+PCB;1.6mm two layers;1;3;0,6;0,6;Got him from jlcpcb but use whats cheaper in your region (jlcpcb is a great choice tho);
+;;;;;;;
+Shipping Price;;~10-15€;;;;;
+;;;;;;;
+Total Price (€);;109,55;;;;;
+Total Price ($);;128,88;;;;;
+Total Buying Price (Because you'll buying multiples at once) €;;150,45;;;;;
+Total Buying Price (Because you'll buying multiples at once) $;;177;;;;;
