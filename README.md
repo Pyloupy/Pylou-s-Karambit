@@ -209,7 +209,8 @@ Solder + and - 18awg or less cable to the resistor as it shows on this image(the
 ### Step 3: assembling:
 Fix the battery below the PCB with the adpater and screws/bolt.  
 Fix the PCB into the handle with the scews.  
-Fix the Resistor with the adapter printed and screws. 
+Fix the Resistor with the adapter printed and screws. (Careful for the orientation !) (PS: photo's comming when ill finish build)
+Fix the Fan Adapter to the fan when screwing the fan.
 
 Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor. 
 
