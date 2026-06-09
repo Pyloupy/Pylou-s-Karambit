@@ -19,7 +19,7 @@ I wanted to make it as a fan of the game Valorant. A lot of recreation has been 
 
 At first, I created a prototype with not a lot of brain work behind it and it didnt work at all (as you can see in the photo) and I didn't even know why, so I gave up.
 
-<img src=./Pictures/Prototype.jpg wdith=300>
+<img src=./Pictures/Prototype.jpg width=500>
 
 My friends made a little fun of me and that's why when I hear of the Fallout project I decided to take my revenge and make a clean work that will work! That's enough story telling, let's get in the details !
 # Functionalities
@@ -38,13 +38,13 @@ But an image is worth thousands of words! I made the CAD of my model in blender 
 
 But I made a little render with an exploded view effect and I think it turned out well:
 
-<img src=./Pictures/ZinePage.png wdith=800>
+<img src=./Pictures/ZinePage.png wdith=900>
 
 The design is around the exploded view where you can see every components linked to the explanation of his role. I think it's a cool way to show off everything you have to fit in this tiny space to make it work!
 For the text name, I tried to make an effect with the smoke comming out of the resistor, although I think the idea is great, I'm not completly happy with the effect it gives. But overall I'm happy with my zine page!  
 If you want, In the CAD folder you can find the "render.blend" file where I worked on the exploded view if you want to play with it :)
 
-<img src=./Pictures/Render.png width=300>
+<img src=./Pictures/Render.png width=400>
 
 # CAD
 ### the Karambit
@@ -67,11 +67,11 @@ That's why I wanted a backup option for the wakeup system and I thought about a 
 
 I wanted a dark and stylized way to show off the reaver karambit. With a bit of research I found this picture reference of the reaver woods from the game wayfinder that i didnt't even know existed:
 
-<image src=./Pictures/ReaverWood.png width=400>
+<image src=./Pictures/ReaverWoods.png width=400>
   
 I thought it completly matched the theme and made a model based on this reference image. It holds the knife with different branches and goes around like a protection.
 
-<image src=./Picutres/Stand.png width=400>
+<image src=./Pictures/Stand.png width=600>
   
 I made it really big and I will have to print it in 5 different parts and glue it together, I really hope it will be strong enough to hold everything, but it should do the job.
 ### Adapters 
@@ -89,7 +89,7 @@ Now for the PCB part! I did everything in Kicad which is a free software you can
 Overall, the schematic and electrical design is not really complicated as it consist only of the xiao nrf52840, pins for the battery, pins for the resistor, pins for the fan, 2 IRLZ44N mosfets and a couples of resistors and diode for protection.  
 Here's the schematic:
 
-<image src=./Pictures/Schematics.png width=400>
+<image src=./Pictures/Schematics.png width=800>
   
 As you can see the mosfets control both the fan and resistor as the current could kill the microcontroller if connected directly to it.  
 There are 10k pull-down resistors linked to the mosfets to prevent any unwanted turn on when the board is in deep sleep. The schottky 1N5819 diode is connected to the fan to prevent any back current that could fry the xiao board.
@@ -101,7 +101,7 @@ But the pcb itself is a bit small and in a strange shape since it had to fit in 
 I think I couldn't really more include more components with the way I shaped the pcb, with the large trace I had to place for the current to flow easily into the heat resistor.
 Here's how it looks:
 
-<img src=./Pictures/PCB.png width=400>
+<img src=./Pictures/PCB.png width=800>
 
 I also added holes to scew the pcb to the handle of the karambit, and I used the mosfets holes to fix the battery beneath the pcb.  
 The SK6812MINI LEDs is place as far away as I could to place it near the blade of the karambit, that is why the pcb has this strange L shape.  
@@ -195,8 +195,10 @@ Place the fake leather into both handles, mines auto-adhesive if you take the on
 ### **Step 2** soldering:
 
 Beforehand be careful with the reed sensor, you will have to cut a platic part from it : 
-<img src=./Pictures/reed.jpg width=400>
-without that it won't fit  
+
+<img src=./Pictures/reed.jpg width=200>
+
+without that it won't fit.  
 Solder the xiao nrf52840 (dont forget connection for the battery), 200/1k ohms resistor, both mosfets, battery cable, fan, Schottky diode, SK6812MINI Led and Reed switch (let enough cable to play with) into the PCB and test everything with the different scripts in the Firmware folder.  
 
 With a soldering Iron place the differents inserts in there places.  
@@ -210,9 +212,13 @@ Fix the PCB into the handle with the scews.
 Fix the Resistor with the adapter printed and screws. 
 
 Take the joint from the part you removed earlier from the clearomizer and place it on the adapter, then put it with the 6mm tube into the resistor. 
-<img src=./Pictures/removejoint.jpg width=400>
+
+<img src=./Pictures/removejoint.jpg width=600>
+
 Then block the left side of the base to force the airflow to go throught the coil : 
-<img src=./Pictures/airflow.png width=400>
+
+<img src=./Pictures/Airflow.png width=500>
+
 Fix the first blade to the handle.
 
 Cut and insert the acrylic tube into the handle and place it above the LED, if it doesn't transmit light good enough, try sanding the sides of the acrylic tube.  
@@ -233,10 +239,14 @@ Thanks to Seeed Studio for the xiao boards (cyu in Shenzhen, plzzzzzz make more 
 Thanks to Emmanuel Macron for giving me so much money in scolarship, the goat
 <br/>
 <br/>
+<br/>
 
 See you in Shenzhen ;).
 
 
+<br/>
+<br/>
+<br/>
 
 
 
