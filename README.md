@@ -127,6 +127,11 @@ Don't forget to change in the Firmware code the import of the library to your ow
 ⚠️ I recommend you record you files after build (see below) to have more realistic conditions
 ### Movement Recognition
 For this, we again will use Edge Impulse AI, basically just follow the steps of [this](https://wiki.seeedstudio.com/XIAOEI/) tutorial and create your own movements you want to recognize.
+It is basically the same thing as the voice recognition but here, you can easely record your samples via the website and nodejs, that will have to install (but everything is shown on the tutorial)
+
+In the Firmware Tools folder you will find a script that makes you able to test your model. It is just adapted from an exemple of the movement recogntion library. It is basically the same thing but without installing additional library and using the official Seeed Xiao Nrf52 LSM6DS3 library.
+
+Again the compilation can take a while, be patient.
 
 (PS: implementation in the main code hasn't been made yet, it'll be when I'll start building)
 
@@ -152,7 +157,7 @@ If you don't want complex movement recognition you could just use this bit of co
     fumeeOff(); //Function to disable effects/smoke
   }
 ```
-(It's the code written in the main loop for now)
+(It's the code written in the main loop Firmware for now)
 ## How does it work ?
 For this part, I really wanted to do an advanced job and use all the potential that the xiao nrf52840 as to offer.  
 I choosed to use Arduino code for this project as it is efficient and well more documented than the other programming language options.  
