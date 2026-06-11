@@ -126,7 +126,9 @@ Now you just have to follow this [tutorial](https://wiki.seeedstudio.com/XIAO-BL
 Don't forget to change in the Firmware code the import of the library to your own !  
 ⚠️ I recommend you record you files after build (see below) to have more realistic conditions
 ### Movement Recognition
-Haven't done that yet since i'm waiting to build it to record the different movement I want the microcontroller to recognize
+For this, we again will use Edge Impulse AI, basically just follow the steps of [this](https://wiki.seeedstudio.com/XIAOEI/) tutorial and create your own movements you want to recognize.
+
+(PS: implementation in the main code hasn't been made yet, it'll be when I'll start building)
 ## How does it work ?
 For this part, I really wanted to do an advanced job and use all the potential that the xiao nrf52840 as to offer.  
 I choosed to use Arduino code for this project as it is efficient and well more documented than the other programming language options.  
