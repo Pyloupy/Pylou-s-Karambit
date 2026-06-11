@@ -129,6 +129,30 @@ Don't forget to change in the Firmware code the import of the library to your ow
 For this, we again will use Edge Impulse AI, basically just follow the steps of [this](https://wiki.seeedstudio.com/XIAOEI/) tutorial and create your own movements you want to recognize.
 
 (PS: implementation in the main code hasn't been made yet, it'll be when I'll start building)
+
+If you don't want complex movement recognition you could just use this bit of code to detect any type of fast movements with acceleration:
+```cpp
+//in the void loop:
+  currentMillis = millis();
+  float gX = myIMU.readFloatAccelX();
+  float gY = myIMU.readFloatAccelY();
+  float gZ = myIMU.readFloatAccelZ();
+
+  float magnitude = sqrt(gX * gX + gY * gY + gZ * gZ);
+  /* Serial.println(gX);
+  Serial.println(gY);
+  Serial.println(gZ); */
+  // Detect rapid movement
+  if (magnitude > 2.5) {
+    Serial.println("slash detected");
+    fumee(); //Function for effetcs/smoke
+    //delay(1000);
+    startMillis = millis();//restart timer coz movement detected
+  }else{
+    fumeeOff(); //Function to disable effects/smoke
+  }
+```
+(It's the code written in the main loop for now)
 ## How does it work ?
 For this part, I really wanted to do an advanced job and use all the potential that the xiao nrf52840 as to offer.  
 I choosed to use Arduino code for this project as it is efficient and well more documented than the other programming language options.  
