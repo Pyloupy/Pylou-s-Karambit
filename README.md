@@ -133,6 +133,8 @@ In the Firmware Tools folder you will find a script that makes you able to test 
 
 Again the compilation can take a while, be patient.
 
+It is very basic, and I will work on a continuous version to make it smooth and non-blocking. (This is also true for voice recogntion, but in this case the model also needs to be optimized)
+
 (PS: implementation in the main code hasn't been made yet, it'll be when I'll start building)
 
 If you don't want complex movement recognition you could just use this bit of code to detect any type of fast movements with acceleration:
